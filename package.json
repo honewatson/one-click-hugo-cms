@@ -47,7 +47,7 @@
     "postcss-import": "^12.0.0",
     "postcss-loader": "^3.0.0",
     "postcss-uncss": "^0.16.0",
-    "react": "16.7.0",
+    "react": "^16.8.6",
     "react-tag-autocomplete": "^5.10.0",
     "simple-git": "^1.110.0",
     "sucrase": "^3.10.1",
