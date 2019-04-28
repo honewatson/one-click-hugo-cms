@@ -1,4 +1,4 @@
-import React, from "react";
+import React from "react";
 import CMS from "netlify-cms";
 import ReactTags from "react-tag-autocomplete";
 
