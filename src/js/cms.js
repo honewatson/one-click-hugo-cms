@@ -27,7 +27,7 @@ class TagsControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      tags: [...(props.value || [])],
+      tags: [].concat((props.value || [])),
     };
   }
 
