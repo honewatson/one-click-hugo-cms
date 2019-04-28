@@ -27,7 +27,8 @@ class TagsControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      tags: [].concat((props.value || [])),
+      // Convert Immutable List to plain array
+      tags: [].concat((props.value ? props.value.toArray().map(it => it.toObject()) : [])),
     };
   }
 
