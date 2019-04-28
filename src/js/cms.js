@@ -22,28 +22,42 @@ class ColorControl extends React.Component {
   }
 }
 
-const TagsControl = ({ value = [], onChange }) => {
-  const [tags, setTags] = useState(value);
-  const handleDelete = i => {
-    const tags = tags.slice(0);
-    tags.splice(i, 1);
-    setTags(tags);
-    onChange(tags);
-  };
 
-  const handleAddition = tag => {
-    const tags = [].concat(tags, tag);
-    setTags(tags);
+class TagsControl extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      tags: [...props.value],
+    };
+  }
+
+  handleDelete(i) {
+    const tags = this.state.tags.slice(0);
+    tags.splice(i, 1);
+    this.setState({ tags });
     onChange(tags);
-  };
-  return (
-    <ReactTags
-      tags={tags}
-      handleDelete={handleDelete}
-      handleAddition={handleAddition}
-    />
-  );
-};
+  }
+
+  handleAddition(tag) {
+    const tags = [].concat(this.state.tags, tag);
+    this.setState({ tags });
+    onChange(tags);
+  }
+
+  render() {
+    return (
+      <ReactTags
+        tags={this.state.tags}
+        suggestions={this.state.suggestions}
+        handleDelete={this.handleDelete.bind(this)}
+        handleAddition={this.handleAddition.bind(this)}
+        allowNew={true}
+      />
+    );
+  }
+}
+
+
 
 CMS.registerPreviewStyle("/css/main.css");
 CMS.registerPreviewTemplate("home", HomePreview);
