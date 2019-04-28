@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, from "react";
 import CMS from "netlify-cms";
 import ReactTags from "react-tag-autocomplete";
 
@@ -27,7 +27,7 @@ class TagsControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      tags: [...props.value],
+      tags: [...(props.value || [])],
     };
   }
 
@@ -35,13 +35,13 @@ class TagsControl extends React.Component {
     const tags = this.state.tags.slice(0);
     tags.splice(i, 1);
     this.setState({ tags });
-    onChange(tags);
+    this.props.onChange(tags);
   }
 
   handleAddition(tag) {
     const tags = [].concat(this.state.tags, tag);
     this.setState({ tags });
-    onChange(tags);
+    this.props.onChange(tags);
   }
 
   render() {
