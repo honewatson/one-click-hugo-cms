@@ -50,6 +50,7 @@
     "react": "^16.8.6",
     "react-tag-autocomplete": "^5.10.0",
     "simple-git": "^1.110.0",
+    "styled-jsx": "^3.2.1",
     "sucrase": "^3.10.1",
     "uncss": "^0.16.0",
     "url-loader": "^1.0.0",
