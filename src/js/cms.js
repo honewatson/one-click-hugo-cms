@@ -60,7 +60,7 @@ class TagsControl extends React.Component {
           handleAddition={this.handleAddition.bind(this)}
           allowNew={true}
         />
-        <style jsx>{`
+        <style jsx global>{`
           .react-tags {
             position: relative;
             padding: 6px 0 0 6px;
