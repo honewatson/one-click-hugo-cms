@@ -52,7 +52,7 @@ class TagsControl extends React.Component {
 
   render() {
     return (
-      <>
+      <React.Fragment>
         <ReactTags
           tags={this.state.tags}
           suggestions={this.state.suggestions}
@@ -193,7 +193,7 @@ class TagsControl extends React.Component {
             cursor: auto;
           }
         `}</style>
-      </>
+      </React.Fragment>
     );
   }
 }
