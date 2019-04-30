@@ -2,4 +2,4 @@ baseurl = "/"
 languageCode = "en-us"
 title = "Homepage"
 [permalinks]
-  posts = "/:title/"
+  post = "/:title"
